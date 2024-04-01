@@ -340,17 +340,16 @@ def main():
         is_pairwise = 'com2sense' in dataset_names
 
         # Inference
-        metrics = compute_eval_metrics(model, loader, device, data_len, tokenizer, text2text, is_pairwise=is_pairwise,
-                                       is_test=True, parallel=args.data_parallel)
+        metrics = compute_eval_metrics_test(model, loader, device, data_len, tokenizer, text2text, is_pairwise=is_pairwise, parallel=args.data_parallel)
 
         df = pd.DataFrame(metrics['meta'])
         df.to_csv(args.pred_file)
 
         print(f'Results for model {args.model}')
         print(f'Results evaluated on file {args.test_file}')
-        print('Sentence Accuracy: {:.4f}'.format(metrics['accuracy']))
-        if is_pairwise:
-            print('Pairwise Accuracy: {:.4f}'.format(metrics['pair_acc']))
+        # print('Sentence Accuracy: {:.4f}'.format(metrics['accuracy']))
+        # if is_pairwise:
+        #     print('Pairwise Accuracy: {:.4f}'.format(metrics['pair_acc']))
 
 
 if __name__ == '__main__':

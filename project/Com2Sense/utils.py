@@ -65,20 +65,20 @@ def compute_eval_metrics(model, dataloader, device, size, tokenizer, text2text=F
         else:
             # Forward Pass
             label_logits = model(batch)
-            label_gt = batch['label']
+            # label_gt = batch['label']
             label_pred = torch.argmax(label_logits, dim=1)
-
+            # print(label_pred)
             input_decoded += [decode(x) for x in batch['tokens']]
 
             # Loss
-            loss.append(F.cross_entropy(label_logits, label_gt, reduction='mean'))
+            # loss.append(F.cross_entropy(label_logits, label_gt, reduction='mean'))
 
             label_pred = label_pred.detach().cpu().tolist()
-            label_gt = label_gt.detach().cpu().tolist()
+            # label_gt = label_gt.detach().cpu().tolist()
 
         # Append batch; list.extend()
         predicted += label_pred
-        ground_truth += label_gt
+        # ground_truth += label_gt
 
         total_samples += dataloader.batch_size
 
@@ -86,21 +86,93 @@ def compute_eval_metrics(model, dataloader, device, size, tokenizer, text2text=F
             break
 
     # Compute metrics
-    accuracy = 100 * accuracy_score(ground_truth, predicted)
-    pair_acc = 100 * _pairwise_acc(ground_truth, predicted) if is_pairwise else None
+    # accuracy = 100 * accuracy_score(ground_truth, predicted)
+    # pair_acc = 100 * _pairwise_acc(ground_truth, predicted) if is_pairwise else None
 
-    loss = torch.tensor(loss).mean()
+    # loss = torch.tensor(loss).mean()
 
-    metrics = {'loss': loss,
-               'accuracy': accuracy,
-               'pair_acc': pair_acc}
+    # metrics = {'loss': loss,
+    #            'accuracy': accuracy,
+    #            'pair_acc': pair_acc}
 
     if is_test:
         metrics['meta'] = {'input': input_decoded,
-                           'prediction': predicted,
-                           'ground_truth': ground_truth}
+                           'prediction': predicted}
+                        #    'ground_truth': ground_truth}
     return metrics
 
+
+@torch.no_grad()
+def compute_eval_metrics_test(model, dataloader, device, size, tokenizer, text2text=False, is_pairwise=False,
+                         parallel=False):
+    """
+    For the given model, returns the predictions in test mode.
+
+    :param model: model to evaluate
+    :param dataloader: validation/test set dataloader
+    :param device: cuda/cpu device where the model resides
+    :param size: no. of samples (subset) to use
+    :param tokenizer: tokenizer used by the dataloader
+    :param is_pairwise: compute the pairwise accuracy
+    :param is_test: if set, will return (input, ground-truth & prediction) info under 'meta'
+    :return: metrics {'loss', 'accuracy', 'pairwise', 'meta'}
+    :rtype: dict
+    """
+    model.eval()
+
+    # Store predicted & ground-truth labels
+    _ids = []
+    input_decoded = []
+    predicted = []
+    ground_truth = []
+    loss = []
+
+    def decode(token_ids):
+        return tokenizer.decode(token_ids, skip_special_tokens=True)
+
+    total_samples = 0
+    # Evaluate on mini-batches
+    for batch in tqdm(dataloader):
+        batch = {k: v.to(device) for k, v in batch.items()}
+        # T5 inference
+        if text2text:
+            # Forward Pass (predict)
+            if parallel:
+                label_pred = model.module.generate(input_ids=batch['input_tokens'],
+                                                   attention_mask=batch['input_attn_mask'],
+                                                   max_length=2)
+            else:
+                label_pred = model.generate(input_ids=batch['input_tokens'],
+                                            attention_mask=batch['input_attn_mask'],
+                                            max_length=2)
+            label_pred = [decode(x).strip() for x in label_pred]
+
+            input_decoded += [decode(x) for x in batch['input_tokens']]
+
+            # Forward Pass (loss)
+            out = model(batch)
+            loss.append(out[0])
+
+        # Others
+        else:
+            # Forward Pass
+            label_logits = model(batch)
+            label_pred = torch.argmax(label_logits, dim=1)
+            input_decoded += [decode(x) for x in batch['tokens']]
+
+            label_pred = label_pred.detach().cpu().tolist()
+
+        # Append batch; list.extend()
+        predicted += label_pred
+
+        total_samples += dataloader.batch_size
+
+        if total_samples >= size:
+            break
+    metrics = {}
+    metrics['meta'] = {'input': input_decoded,
+                        'prediction': predicted}
+    return metrics
 
 def _pairwise_acc(y_gt, y_pred):
     assert len(y_gt) == len(y_pred) and len(y_gt) % 2 == 0, 'Invalid Inputs for Pairwise setup'

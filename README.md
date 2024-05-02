@@ -104,6 +104,7 @@ $ python3 main.py --mode train \
 ```
 
 The log directory for this sample script would be `./results_log/com2sense/roberta_large/bs_32`
+Model names should match as seen on [HuggingFace](https://huggingface.co/)
 
 The Train & Validation metrics are logged to TensorBoard.
 

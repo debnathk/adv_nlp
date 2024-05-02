@@ -1,36 +1,26 @@
 
-
 # Commonsense inference using Large-Language Models
 
-
-This repo contains the dataset and baseline model weights for 
+This repo contains the dataset and baseline model weights for
 [Com2Sense](https://arxiv.org/abs/2106.00969) Benchmark.
 
 ---
 
-  
- 
 ## Table of Contents
 
-  
-
--  [Dataset](#Dataset)
-
--  [Models](#Models)
-
--  [Training](#Training)
-
--  [Inference](#Inference)
+- [Dataset](#dataset)
+- [Models](#models)
+- [Installation](#installation)
+- [Training](#training)
+- [Inference](#inference)
   
 ---
-
-  
 
 ## Dataset
 
 The directory is structured as follows:
- 
-```
+
+```bash
 data
 ├── train.json
 ├── dev.json
@@ -44,7 +34,7 @@ data
 
 Each data file has the following format:
 
-```
+```json
 
 [   
     {
@@ -78,106 +68,66 @@ Pair id files are used to get data pair information and could be used to calcula
 | XLNet-base     | 54.43 / 27.60       | ... |
 | ERNIE-2.0-base     | 55.86 / 30.73       | ... |
 
+---
 
+## Installation
+
+1. Clone this repository.
+2. Create a Python 3.11.7 or newer conda environment.
+
+```bash
+conda create -n my_conda_env python=3.11.7
+conda activate my_conda_env
+```
+
+3. Install the required python modules.
+
+```
+pip install -r requirements.txt
+```
 
 ---
 
 ## Training
 
-For training we provide a sample script, with custom arguments ([train.sh](./train.sh))
+For training we provide a sample script, with custom arguments:
   
-
 ```bash
-$ python3 main.py \
---mode train \
---dataset com2sense \
+$ python3 main.py --mode train \
+--expt_dir ./results_log/com2sense \
+--expt_name roberta_large \
 --model roberta-large \
---expt_dir ./results \
---expt_name roberta \
---run_name demo \
---seq_len 128 \
---epochs 100 \
---batch_size 16 \
---acc_step 4 \
---lr 1e-5 \
---log_interval 500 \
---gpu_ids 0,1,2,3 \
---use_amp T \
--data_parallel
+--dataset com2sense \
+--run bs_32 \
+--batch_size 32 \
+--seq_len 128
 ```
 
-The log directory for this sample script would be `./results/roberta/demo/`
+The log directory for this sample script would be `./results_log/com2sense/roberta_large/bs_32`
 
 The Train & Validation metrics are logged to TensorBoard.
- 
+
 ```bash
-$ tensorboard --logdir ...
+tensorboard --logdir ...
 ```
 
 Note: `logdir = expt_dir/expt_name/run_name/`
 
-
 ---
 
- 
 ## Inference
-   
-**TO-DO**
 
-For inference on **dev set**, we can modify as follows ([test.sh](./test.sh)):
+For inference on **dev set**, we can modify as follows:
   
-
 ```bash
 $ python3 main.py \
 --mode test \
+--ckpt ./path/to/model.pth \
 --model roberta-large \
 --dataset com2sense \
---ckpt ./path_to_model.pth
---test_file test \
---pred_file roberta_large_results.csv 
+--batch_size 32
 ```
----
-   
-
-## Leaderboard
-
-To test your own model, modify the line 128:
-```
-model = Transformer(args.model, args.num_cls, text2text, num_layers=args.num_layers)
-```
-
-To evaluate on the **official test set**, we have two modes:
-
-- **Evaluation**
-
-Run with `eval` mode
-    
-```bash
-$ python3 leaderboard.py \
---mode eval \
---ckpt /expt_dir/expt_name/run_name/model.pth
-```
-
-Output:
-
-```
-{
-    'pairwise': 0.25,
-    'standard': 0.50
-}
-```
-
-- **Submit**
-
-Fill in the information in `submit.yaml`, and then run with `submit` mode
-    
-```bash
-$ python3 leaderboard.py \
---mode submit \
---ckpt /expt_dir/expt_name/run_name/model.pth \
---user_info ./submit.yaml
-```
-
-You can view the leaderboard at `URL`
 
 ---
+
+Note: `If running this on VCU's athena, refer to ./slurm_scripts. Modify your environment name and run it using sbatch`

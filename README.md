@@ -1,12 +1,10 @@
 
 
-# Com2Sense
+# Commonsense inference using Large-Language Models
 
 
 This repo contains the dataset and baseline model weights for 
 [Com2Sense](https://arxiv.org/abs/2106.00969) Benchmark.
-
-It also provides access to Leaderboard submission.
 
 ---
 
@@ -23,8 +21,6 @@ It also provides access to Leaderboard submission.
 -  [Training](#Training)
 
 -  [Inference](#Inference)
-
--  [Leaderboard](#Leaderboard)
   
 ---
 
@@ -35,12 +31,12 @@ It also provides access to Leaderboard submission.
 The directory is structured as follows:
  
 ```
-com2sense
+data
 ├── train.json
 ├── dev.json
 └── test.json
 
-com2sense
+data
 ├── pair_id_train.json
 ├── pair_id_dev.son
 └── pair_id_test.json
@@ -74,8 +70,13 @@ Pair id files are used to get data pair information and could be used to calcula
 
 | Model             | Std / Pair Accuracy | Weights  |
 | ---------         | ------------------- | --------- |
-| UnifiedQA-3B      | 71.31 / 51.26       | [Link](https://drive.google.com/file/d/1uQnxZAkSoDc8JEmESzTl0XVE8kHpm_10/view?usp=sharing)|
-| DeBerta-large     | 63.53 / 45.30       | ... |
+| UnifiedQA-T5-3B      | 76.21 / 57.54       | [Link](https://drive.google.com/file/d/1uQnxZAkSoDc8JEmESzTl0XVE8kHpm_10/view?usp=sharing)|
+| BERT-base     | 54.35 / 24.81       | ... |
+| RoBERTa-large     | 62.15 / 37.85       | ... |
+| DeBERTa-large     | 68.67 / 28.59       | ... |
+| T5-large     | 61.59 / 36.72       | ... |
+| XLNet-base     | 54.43 / 27.60       | ... |
+| ERNIE-2.0-base     | 55.86 / 30.73       | ... |
 
 
 

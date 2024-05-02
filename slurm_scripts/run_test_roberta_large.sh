@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name com2sense_roberta
-#SBATCH --output ../slurm_logs/output_test_roberta_large.log
-#SBATCH --error ../slurm_logs/error_test_roberta_large.log
+#SBATCH --output ./slurm_logs/output_test_roberta_large.log
+#SBATCH --error ./slurm_logs/error_test_roberta_large.log
 #SBATCH --partition gpu
 #SBATCH --mem 32G          
 #SBATCH --gres gpu:1
@@ -18,7 +18,7 @@ module load cuda/12.3  # Change this to the appropriate CUDA version
 # module load anaconda/2020.11  # Change this to the appropriate Anaconda version
 
 # Activate Python environment
-source activate /lustre/home/pghoshlab/adv_nlp/.venv/bin/python3
+source activate /lustre/home/pghoshlab/adv_nlp/.venv/bin/python3 # replace this line to activate your own virtual/conda environment
 
 # Run Python script
 python3 main.py \

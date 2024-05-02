@@ -3,6 +3,5 @@ __pycache__
 *.log
 model_weights
 .venv
-results_log
 slurm_logs
 *.log

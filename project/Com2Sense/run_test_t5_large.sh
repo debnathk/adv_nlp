@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=com2sense_roberta
-#SBATCH --output output_test_roberta_large.log
-#SBATCH --error error_test_roberta_large.log
+#SBATCH --output ../slurm_logs/output_test_roberta_large.log
+#SBATCH --error ../slurm_logs/error_test_roberta_large.log
 #SBATCH --partition gpu
 #SBATCH --mem=32G          
 #SBATCH --gres=gpu:1

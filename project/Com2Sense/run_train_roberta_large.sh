@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=com2sense_roberta
-#SBATCH --output output_train_roberta_large.log
-#SBATCH --error error_train_roberta_large.log
+#SBATCH --output ./slurm_logs/output_train_roberta_large.log
+#SBATCH --error ./slurm_logs/error_train_roberta_large.log
 #SBATCH --partition gpu
 #SBATCH --mem=32G          
 #SBATCH --gres=gpu:1
@@ -18,7 +18,7 @@ module load cuda/12.3  # Change this to the appropriate CUDA version
 # module load anaconda/2020.11  # Change this to the appropriate Anaconda version
 
 # Activate Python environment
-source activate /lustre/home/debnathk/adv_nlp/.venv/bin/python3
+source activate /lustre/home/pghoshlab/adv_nlp/.venv/bin/python3
 
 # Run Python script
 python3 main.py --mode train \
@@ -26,8 +26,8 @@ python3 main.py --mode train \
 --expt_name roberta_large \
 --model roberta-large \
 --dataset com2sense \
---run bs_16 \
---batch_size 16 \
+--run bs_32 \
+--batch_size 32 \
 --seq_len 128
 
 end_time=$(date +%s)

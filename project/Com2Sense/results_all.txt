@@ -1,0 +1,3 @@
+roberta-large batch size 16 after finetuning
+
+Selected GPUs: [0]

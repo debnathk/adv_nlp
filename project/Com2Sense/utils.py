@@ -8,11 +8,10 @@ from sklearn.metrics import accuracy_score, classification_report
 
 
 @torch.no_grad()
-def compute_eval_metrics(model, dataloader, device, size, tokenizer, text2text=False, is_pairwise=False, is_test=False,
+def compute_eval_metrics(model, dataloader, device, size, tokenizer, text2text=False, is_pairwise=True, is_test=False,
                          parallel=False):
     """
     For the given model, computes accuracy & loss on validation/test set.
-
     :param model: model to evaluate
     :param dataloader: validation/test set dataloader
     :param device: cuda/cpu device where the model resides
@@ -65,20 +64,20 @@ def compute_eval_metrics(model, dataloader, device, size, tokenizer, text2text=F
         else:
             # Forward Pass
             label_logits = model(batch)
-            # label_gt = batch['label']
+            label_gt = batch['label']
             label_pred = torch.argmax(label_logits, dim=1)
-            # print(label_pred)
+
             input_decoded += [decode(x) for x in batch['tokens']]
 
             # Loss
-            # loss.append(F.cross_entropy(label_logits, label_gt, reduction='mean'))
+            loss.append(F.cross_entropy(label_logits, label_gt, reduction='mean'))
 
             label_pred = label_pred.detach().cpu().tolist()
-            # label_gt = label_gt.detach().cpu().tolist()
+            label_gt = label_gt.detach().cpu().tolist()
 
         # Append batch; list.extend()
         predicted += label_pred
-        # ground_truth += label_gt
+        ground_truth += label_gt
 
         total_samples += dataloader.batch_size
 
@@ -86,19 +85,19 @@ def compute_eval_metrics(model, dataloader, device, size, tokenizer, text2text=F
             break
 
     # Compute metrics
-    # accuracy = 100 * accuracy_score(ground_truth, predicted)
-    # pair_acc = 100 * _pairwise_acc(ground_truth, predicted) if is_pairwise else None
+    accuracy = 100 * accuracy_score(ground_truth, predicted)
+    pair_acc = 100 * _pairwise_acc(ground_truth, predicted) if is_pairwise else None
 
-    # loss = torch.tensor(loss).mean()
+    loss = torch.tensor(loss).mean()
 
-    # metrics = {'loss': loss,
-    #            'accuracy': accuracy,
-    #            'pair_acc': pair_acc}
+    metrics = {'loss': loss,
+               'accuracy': accuracy,
+               'pair_acc': pair_acc}
 
     if is_test:
         metrics['meta'] = {'input': input_decoded,
-                           'prediction': predicted}
-                        #    'ground_truth': ground_truth}
+                           'prediction': predicted,
+                           'ground_truth': ground_truth}
     return metrics
 
 

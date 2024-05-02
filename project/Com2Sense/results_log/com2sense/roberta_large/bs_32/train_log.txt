@@ -796,3 +796,1042 @@ Validation Accuracy: 59.90 %  || Validation Loss: 2.3765
 -------------------------------------------------------------------------
 
 
+python3 main.py
+--mode train
+--expt_dir ./results_log/com2sense
+--expt_name roberta_large
+--run_name bs_32
+--test_file test
+--model roberta-large
+--num_layers -1
+--seq_len 128
+--num_cls 2
+--ckpt None
+--pred_file results.csv
+--dataset com2sense
+--lr 1e-05
+--epochs 100
+--batch_size 32
+--acc_step 1
+--log_interval 100
+--save_interval 30000
+--val_size 2048
+--gpu_ids 0
+--data_parallel False
+--use_amp True
+--cpu False
+--num_workers 1
+
+
+Train: 1608 
+Validation: 782
+
+Validation Accuracy is computed using 782 samples. See --val_size
+No. of Classes: 2
+
+python3 main.py
+--mode train
+--expt_dir ./results_log/com2sense
+--expt_name roberta_large
+--run_name bs_32
+--test_file test
+--model roberta-large
+--num_layers -1
+--seq_len 128
+--num_cls 2
+--ckpt None
+--pred_file results.csv
+--dataset com2sense
+--lr 1e-05
+--epochs 100
+--batch_size 32
+--acc_step 1
+--log_interval 100
+--save_interval 30000
+--val_size 2048
+--gpu_ids 0
+--data_parallel False
+--use_amp True
+--cpu False
+--num_workers 1
+
+
+Train: 1608 
+Validation: 782
+
+Validation Accuracy is computed using 782 samples. See --val_size
+No. of Classes: 2
+
+-------------------------------------------------------------------------
+
+After 1 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6944 || Pairwise Accuracy: 23.70
+
+** Best Performing Model: 50.00 ** 
+Saving weights at ./results_log/com2sense/roberta_large/bs_32/ep_1_stp_51_acc_50.0000_roberta_large.pth
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.26 %  || Validation Loss: 0.6977
+Epoch [2/100], Step [100/50], Loss: 0.7151 | time elapsed: 0.02h |
+-------------------------------------------------------------------------
+
+After 2 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6982 || Pairwise Accuracy: 25.78
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 3 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6972 || Pairwise Accuracy: 25.00
+
+** Best Performing Model: 50.13 ** 
+Saving weights at ./results_log/com2sense/roberta_large/bs_32/ep_3_stp_151_acc_50.1302_roberta_large.pth
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6946
+Epoch [4/100], Step [200/50], Loss: 0.6961 | time elapsed: 0.03h |
+-------------------------------------------------------------------------
+
+After 4 epoch:
+Validation Accuracy: 49.48 %  || Validation Loss: 0.6949 || Pairwise Accuracy: 23.96
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 5 epoch:
+Validation Accuracy: 51.30 %  || Validation Loss: 0.6933 || Pairwise Accuracy: 27.60
+
+** Best Performing Model: 51.30 ** 
+Saving weights at ./results_log/com2sense/roberta_large/bs_32/ep_5_stp_251_acc_51.3021_roberta_large.pth
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.39 %  || Validation Loss: 0.7001
+Epoch [6/100], Step [300/50], Loss: 0.6957 | time elapsed: 0.04h |
+-------------------------------------------------------------------------
+
+After 6 epoch:
+Validation Accuracy: 49.48 %  || Validation Loss: 0.7025 || Pairwise Accuracy: 24.48
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 7 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6936 || Pairwise Accuracy: 25.52
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6936
+Epoch [8/100], Step [400/50], Loss: 0.6918 | time elapsed: 0.05h |
+-------------------------------------------------------------------------
+
+After 8 epoch:
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6937 || Pairwise Accuracy: 23.44
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 9 epoch:
+Validation Accuracy: 50.91 %  || Validation Loss: 0.6931 || Pairwise Accuracy: 25.00
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6938
+Epoch [10/100], Step [500/50], Loss: 0.6873 | time elapsed: 0.06h |
+-------------------------------------------------------------------------
+
+After 10 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6940 || Pairwise Accuracy: 24.22
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 11 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6943 || Pairwise Accuracy: 26.30
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6964
+Epoch [12/100], Step [600/50], Loss: 0.7179 | time elapsed: 0.07h |
+-------------------------------------------------------------------------
+
+After 12 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6962 || Pairwise Accuracy: 25.52
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 13 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6937 || Pairwise Accuracy: 27.08
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6932
+Epoch [14/100], Step [700/50], Loss: 0.6905 | time elapsed: 0.08h |
+-------------------------------------------------------------------------
+
+After 14 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 25.00
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 15 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 25.26
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6937
+Epoch [16/100], Step [800/50], Loss: 0.7028 | time elapsed: 0.08h |
+-------------------------------------------------------------------------
+
+After 16 epoch:
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6937 || Pairwise Accuracy: 25.52
+-------------------------------------------------------------------------
+
+
+python3 main.py
+--mode train
+--expt_dir ./results_log/com2sense
+--expt_name roberta_large
+--run_name bs_32
+--test_file test
+--model roberta-large
+--num_layers -1
+--seq_len 128
+--num_cls 2
+--ckpt None
+--pred_file results.csv
+--dataset com2sense
+--lr 1e-05
+--epochs 100
+--batch_size 32
+--acc_step 1
+--log_interval 100
+--save_interval 30000
+--val_size 2048
+--gpu_ids 0
+--data_parallel False
+--use_amp True
+--cpu False
+--num_workers 1
+
+
+Train: 1608 
+Validation: 782
+
+Validation Accuracy is computed using 782 samples. See --val_size
+No. of Classes: 2
+
+-------------------------------------------------------------------------
+
+After 1 epoch:
+Validation Accuracy: 51.17 %  || Validation Loss: 0.6942 || Pairwise Accuracy: 26.04 %
+
+** Best Performing Model: 51.17 ** 
+Saving weights at ./results_log/com2sense/roberta_large/bs_32/ep_1_stp_51_acc_51.1719_roberta_large.pth
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6987
+Epoch [2/100], Step [100/50], Loss: 0.7466 | time elapsed: 0.01h |
+-------------------------------------------------------------------------
+
+After 2 epoch:
+Validation Accuracy: 50.26 %  || Validation Loss: 0.6981 || Pairwise Accuracy: 25.00 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 3 epoch:
+Validation Accuracy: 50.39 %  || Validation Loss: 0.6944 || Pairwise Accuracy: 26.04 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6992
+Epoch [4/100], Step [200/50], Loss: 0.6723 | time elapsed: 0.02h |
+-------------------------------------------------------------------------
+
+After 4 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.7001 || Pairwise Accuracy: 25.52 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 5 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.7032 || Pairwise Accuracy: 24.22 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6938
+Epoch [6/100], Step [300/50], Loss: 0.7164 | time elapsed: 0.03h |
+-------------------------------------------------------------------------
+
+After 6 epoch:
+Validation Accuracy: 49.48 %  || Validation Loss: 0.6941 || Pairwise Accuracy: 22.14 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 7 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6961 || Pairwise Accuracy: 23.18 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6988
+Epoch [8/100], Step [400/50], Loss: 0.7137 | time elapsed: 0.04h |
+-------------------------------------------------------------------------
+
+After 8 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6990 || Pairwise Accuracy: 24.74 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 9 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 22.92 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.52 %  || Validation Loss: 0.6946
+Epoch [10/100], Step [500/50], Loss: 0.7106 | time elapsed: 0.04h |
+-------------------------------------------------------------------------
+
+After 10 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6953 || Pairwise Accuracy: 27.08 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 11 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6987 || Pairwise Accuracy: 23.96 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6932
+Epoch [12/100], Step [600/50], Loss: 0.7401 | time elapsed: 0.05h |
+-------------------------------------------------------------------------
+
+After 12 epoch:
+Validation Accuracy: 50.52 %  || Validation Loss: 0.6931 || Pairwise Accuracy: 27.08 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 13 epoch:
+Validation Accuracy: 50.26 %  || Validation Loss: 0.6933 || Pairwise Accuracy: 24.22 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6939
+Epoch [14/100], Step [700/50], Loss: 0.6963 | time elapsed: 0.06h |
+-------------------------------------------------------------------------
+
+After 14 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6939 || Pairwise Accuracy: 25.52 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 15 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6961 || Pairwise Accuracy: 26.04 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6932
+Epoch [16/100], Step [800/50], Loss: 0.7057 | time elapsed: 0.07h |
+-------------------------------------------------------------------------
+
+After 16 epoch:
+Validation Accuracy: 50.26 %  || Validation Loss: 0.6931 || Pairwise Accuracy: 25.00 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 17 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6968 || Pairwise Accuracy: 24.48 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6931
+Epoch [18/100], Step [900/50], Loss: 0.7021 | time elapsed: 0.08h |
+-------------------------------------------------------------------------
+
+After 18 epoch:
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 26.04 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 19 epoch:
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6953 || Pairwise Accuracy: 26.56 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.61 %  || Validation Loss: 0.6948
+Epoch [20/100], Step [1000/50], Loss: 0.6920 | time elapsed: 0.09h |
+-------------------------------------------------------------------------
+
+After 20 epoch:
+Validation Accuracy: 50.52 %  || Validation Loss: 0.6939 || Pairwise Accuracy: 23.18 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 21 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6952 || Pairwise Accuracy: 26.30 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6933
+Epoch [22/100], Step [1100/50], Loss: 0.7102 | time elapsed: 0.09h |
+-------------------------------------------------------------------------
+
+After 22 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6933 || Pairwise Accuracy: 24.74 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 23 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 26.04 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6962
+Epoch [24/100], Step [1200/50], Loss: 0.6679 | time elapsed: 0.10h |
+-------------------------------------------------------------------------
+
+After 24 epoch:
+Validation Accuracy: 50.52 %  || Validation Loss: 0.6954 || Pairwise Accuracy: 23.44 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 25 epoch:
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6933 || Pairwise Accuracy: 25.26 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6936
+Epoch [26/100], Step [1300/50], Loss: 0.6684 | time elapsed: 0.11h |
+-------------------------------------------------------------------------
+
+After 26 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6936 || Pairwise Accuracy: 25.78 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 27 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6966 || Pairwise Accuracy: 24.74 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.61 %  || Validation Loss: 0.7015
+Epoch [28/100], Step [1400/50], Loss: 0.7182 | time elapsed: 0.12h |
+-------------------------------------------------------------------------
+
+After 28 epoch:
+Validation Accuracy: 50.52 %  || Validation Loss: 0.6993 || Pairwise Accuracy: 26.04 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 29 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6943 || Pairwise Accuracy: 23.18 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6963
+Epoch [30/100], Step [1500/50], Loss: 0.6919 | time elapsed: 0.13h |
+-------------------------------------------------------------------------
+
+After 30 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6961 || Pairwise Accuracy: 24.48 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 31 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 24.22 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6935
+Epoch [32/100], Step [1600/50], Loss: 0.6992 | time elapsed: 0.14h |
+-------------------------------------------------------------------------
+
+After 32 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6937 || Pairwise Accuracy: 25.26 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 33 epoch:
+Validation Accuracy: 49.35 %  || Validation Loss: 0.6936 || Pairwise Accuracy: 23.18 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.61 %  || Validation Loss: 0.6936
+Epoch [34/100], Step [1700/50], Loss: 0.7119 | time elapsed: 0.14h |
+-------------------------------------------------------------------------
+
+After 34 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6935 || Pairwise Accuracy: 26.82 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 35 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6933 || Pairwise Accuracy: 25.00 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6938
+Epoch [36/100], Step [1800/50], Loss: 0.6937 | time elapsed: 0.15h |
+-------------------------------------------------------------------------
+
+After 36 epoch:
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6940 || Pairwise Accuracy: 24.48 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 37 epoch:
+Validation Accuracy: 49.61 %  || Validation Loss: 0.6944 || Pairwise Accuracy: 23.96 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6935
+Epoch [38/100], Step [1900/50], Loss: 0.6917 | time elapsed: 0.16h |
+-------------------------------------------------------------------------
+
+After 38 epoch:
+Validation Accuracy: 50.26 %  || Validation Loss: 0.6933 || Pairwise Accuracy: 26.04 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 39 epoch:
+Validation Accuracy: 50.52 %  || Validation Loss: 0.6931 || Pairwise Accuracy: 24.48 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6942
+Epoch [40/100], Step [2000/50], Loss: 0.7063 | time elapsed: 0.17h |
+-------------------------------------------------------------------------
+
+After 40 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6941 || Pairwise Accuracy: 26.82 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 41 epoch:
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 26.30 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.39 %  || Validation Loss: 0.6946
+Epoch [42/100], Step [2100/50], Loss: 0.6851 | time elapsed: 0.18h |
+-------------------------------------------------------------------------
+
+After 42 epoch:
+Validation Accuracy: 50.39 %  || Validation Loss: 0.6946 || Pairwise Accuracy: 25.00 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 43 epoch:
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6933 || Pairwise Accuracy: 23.44 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6932
+Epoch [44/100], Step [2200/50], Loss: 0.6920 | time elapsed: 0.19h |
+-------------------------------------------------------------------------
+
+After 44 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 25.78 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 45 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6942 || Pairwise Accuracy: 25.78 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.61 %  || Validation Loss: 0.6932
+Epoch [46/100], Step [2300/50], Loss: 0.6904 | time elapsed: 0.19h |
+-------------------------------------------------------------------------
+
+After 46 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6931 || Pairwise Accuracy: 23.44 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 47 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 25.78 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.52 %  || Validation Loss: 0.6936
+Epoch [48/100], Step [2400/50], Loss: 0.6951 | time elapsed: 0.20h |
+-------------------------------------------------------------------------
+
+After 48 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6943 || Pairwise Accuracy: 24.48 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 49 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 23.70 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6940
+Epoch [50/100], Step [2500/50], Loss: 0.7028 | time elapsed: 0.21h |
+-------------------------------------------------------------------------
+
+After 50 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6940 || Pairwise Accuracy: 22.92 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 51 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6936 || Pairwise Accuracy: 27.34 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6931
+Epoch [52/100], Step [2600/50], Loss: 0.6964 | time elapsed: 0.22h |
+-------------------------------------------------------------------------
+
+After 52 epoch:
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 24.22 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 53 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6954 || Pairwise Accuracy: 26.56 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6933
+Epoch [54/100], Step [2700/50], Loss: 0.6922 | time elapsed: 0.23h |
+-------------------------------------------------------------------------
+
+After 54 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6934 || Pairwise Accuracy: 24.74 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 55 epoch:
+Validation Accuracy: 49.61 %  || Validation Loss: 0.6950 || Pairwise Accuracy: 24.48 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.26 %  || Validation Loss: 0.6946
+Epoch [56/100], Step [2800/50], Loss: 0.6978 | time elapsed: 0.24h |
+-------------------------------------------------------------------------
+
+After 56 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6948 || Pairwise Accuracy: 25.52 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 57 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6940 || Pairwise Accuracy: 25.78 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6935
+Epoch [58/100], Step [2900/50], Loss: 0.6902 | time elapsed: 0.24h |
+-------------------------------------------------------------------------
+
+After 58 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6934 || Pairwise Accuracy: 25.78 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 59 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6943 || Pairwise Accuracy: 26.04 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.26 %  || Validation Loss: 0.6935
+Epoch [60/100], Step [3000/50], Loss: 0.6902 | time elapsed: 0.25h |
+-------------------------------------------------------------------------
+
+After 60 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6936 || Pairwise Accuracy: 26.04 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 61 epoch:
+Validation Accuracy: 49.61 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 22.40 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6934
+Epoch [62/100], Step [3100/50], Loss: 0.7085 | time elapsed: 0.26h |
+-------------------------------------------------------------------------
+
+After 62 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6934 || Pairwise Accuracy: 26.30 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 63 epoch:
+Validation Accuracy: 50.26 %  || Validation Loss: 0.6934 || Pairwise Accuracy: 27.34 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.61 %  || Validation Loss: 0.6944
+Epoch [64/100], Step [3200/50], Loss: 0.7125 | time elapsed: 0.27h |
+-------------------------------------------------------------------------
+
+After 64 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6939 || Pairwise Accuracy: 26.30 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 65 epoch:
+Validation Accuracy: 50.39 %  || Validation Loss: 0.6931 || Pairwise Accuracy: 26.04 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6932
+Epoch [66/100], Step [3300/50], Loss: 0.6966 | time elapsed: 0.28h |
+-------------------------------------------------------------------------
+
+After 66 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6931 || Pairwise Accuracy: 23.96 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 67 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6931 || Pairwise Accuracy: 24.74 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.39 %  || Validation Loss: 0.6941
+Epoch [68/100], Step [3400/50], Loss: 0.6848 | time elapsed: 0.29h |
+-------------------------------------------------------------------------
+
+After 68 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6944 || Pairwise Accuracy: 25.52 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 69 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6960 || Pairwise Accuracy: 24.48 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6936
+Epoch [70/100], Step [3500/50], Loss: 0.7018 | time elapsed: 0.29h |
+-------------------------------------------------------------------------
+
+After 70 epoch:
+Validation Accuracy: 49.61 %  || Validation Loss: 0.6938 || Pairwise Accuracy: 23.96 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 71 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6938 || Pairwise Accuracy: 25.78 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6931
+Epoch [72/100], Step [3600/50], Loss: 0.6957 | time elapsed: 0.30h |
+-------------------------------------------------------------------------
+
+After 72 epoch:
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6931 || Pairwise Accuracy: 24.74 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 73 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 24.74 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6934
+Epoch [74/100], Step [3700/50], Loss: 0.7020 | time elapsed: 0.31h |
+-------------------------------------------------------------------------
+
+After 74 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6934 || Pairwise Accuracy: 24.22 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 75 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6931 || Pairwise Accuracy: 26.30 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.26 %  || Validation Loss: 0.6931
+Epoch [76/100], Step [3800/50], Loss: 0.7165 | time elapsed: 0.32h |
+-------------------------------------------------------------------------
+
+After 76 epoch:
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 25.78 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 77 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 25.00 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.61 %  || Validation Loss: 0.6942
+Epoch [78/100], Step [3900/50], Loss: 0.7012 | time elapsed: 0.33h |
+-------------------------------------------------------------------------
+
+After 78 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6939 || Pairwise Accuracy: 24.48 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 79 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 25.00 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.39 %  || Validation Loss: 0.6931
+Epoch [80/100], Step [4000/50], Loss: 0.6955 | time elapsed: 0.34h |
+-------------------------------------------------------------------------
+
+After 80 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 26.04 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 81 epoch:
+Validation Accuracy: 50.26 %  || Validation Loss: 0.6934 || Pairwise Accuracy: 24.48 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6932
+Epoch [82/100], Step [4100/50], Loss: 0.6955 | time elapsed: 0.34h |
+-------------------------------------------------------------------------
+
+After 82 epoch:
+Validation Accuracy: 49.48 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 24.48 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 83 epoch:
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6938 || Pairwise Accuracy: 26.30 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6932
+Epoch [84/100], Step [4200/50], Loss: 0.6977 | time elapsed: 0.35h |
+-------------------------------------------------------------------------
+
+After 84 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 24.22 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 85 epoch:
+Validation Accuracy: 50.26 %  || Validation Loss: 0.6933 || Pairwise Accuracy: 25.26 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.39 %  || Validation Loss: 0.6931
+Epoch [86/100], Step [4300/50], Loss: 0.6950 | time elapsed: 0.36h |
+-------------------------------------------------------------------------
+
+After 86 epoch:
+Validation Accuracy: 50.26 %  || Validation Loss: 0.6931 || Pairwise Accuracy: 26.82 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 87 epoch:
+Validation Accuracy: 50.26 %  || Validation Loss: 0.6933 || Pairwise Accuracy: 26.56 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 50.39 %  || Validation Loss: 0.6956
+Epoch [88/100], Step [4400/50], Loss: 0.6893 | time elapsed: 0.37h |
+-------------------------------------------------------------------------
+
+After 88 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6966 || Pairwise Accuracy: 24.74 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 89 epoch:
+Validation Accuracy: 49.61 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 22.66 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6934
+Epoch [90/100], Step [4500/50], Loss: 0.6965 | time elapsed: 0.38h |
+-------------------------------------------------------------------------
+
+After 90 epoch:
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6934 || Pairwise Accuracy: 25.78 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 91 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6941 || Pairwise Accuracy: 25.26 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6933
+Epoch [92/100], Step [4600/50], Loss: 0.6935 | time elapsed: 0.39h |
+-------------------------------------------------------------------------
+
+After 92 epoch:
+Validation Accuracy: 50.26 %  || Validation Loss: 0.6932 || Pairwise Accuracy: 27.34 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 93 epoch:
+Validation Accuracy: 50.52 %  || Validation Loss: 0.6931 || Pairwise Accuracy: 26.82 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6941
+Epoch [94/100], Step [4700/50], Loss: 0.6903 | time elapsed: 0.39h |
+-------------------------------------------------------------------------
+
+After 94 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6940 || Pairwise Accuracy: 23.96 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 95 epoch:
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6933 || Pairwise Accuracy: 25.26 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6937
+Epoch [96/100], Step [4800/50], Loss: 0.6892 | time elapsed: 0.40h |
+-------------------------------------------------------------------------
+
+After 96 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6935 || Pairwise Accuracy: 24.22 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 97 epoch:
+Validation Accuracy: 50.00 %  || Validation Loss: 0.6935 || Pairwise Accuracy: 24.74 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.87 %  || Validation Loss: 0.6932
+Epoch [98/100], Step [4900/50], Loss: 0.6870 | time elapsed: 0.41h |
+-------------------------------------------------------------------------
+
+After 98 epoch:
+Validation Accuracy: 50.52 %  || Validation Loss: 0.6931 || Pairwise Accuracy: 26.56 %
+-------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------
+
+After 99 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6940 || Pairwise Accuracy: 25.78 %
+-------------------------------------------------------------------------
+
+
+Validation Accuracy: 49.74 %  || Validation Loss: 0.6939
+Epoch [100/100], Step [5000/50], Loss: 0.6954 | time elapsed: 0.42h |
+-------------------------------------------------------------------------
+
+After 100 epoch:
+Validation Accuracy: 50.13 %  || Validation Loss: 0.6936 || Pairwise Accuracy: 25.78 %
+-------------------------------------------------------------------------
+
+

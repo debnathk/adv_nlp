@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH --job-name=com2sense_t5_large
-#SBATCH --output ../slurm_logs/output_train_t5_large.log
-#SBATCH --error ../slurm_logs/error_train_t5_large.log
+#SBATCH --job-name=com2sense_deberta
+#SBATCH --output ./slurm_logs/output_train_deberta_large.log
+#SBATCH --error ./slurm_logs/error_train_deberta_large.log
 #SBATCH --partition gpu
 #SBATCH --mem=32G  
-#SBATCH --gres=gpu:2 
+#SBATCH --gres=gpu:1 
 
 echo "Date"
 date
@@ -16,20 +16,20 @@ start_time=$(date +%s)
 module load cuda/12.3  # Change this to the appropriate CUDA version
 # module load cudnn/8.0.4   # Change this to the appropriate cuDNN version
 # module load anaconda/2020.11  # Change this to the appropriate Anaconda version
+# module load anaconda3
 
 # Activate Python environment
 source activate /lustre/home/pghoshlab/adv_nlp/.venv/bin/python3
 
 # Run Python script
-python3 main_new.py --mode train \
+python3 main.py --mode train \
 --expt_dir ./results_log/com2sense \
---expt_name t5_large \
---model google-t5/t5-large \
+--expt_name deberta_large \
+--model microsoft/deberta-large \
 --dataset com2sense \
---run bs_16 \
---batch_size 16 \
---seq_len 128 \
---gpu_ids 0
+--run bs_32 \
+--batch_size 32 \
+--seq_len 128
 
 end_time=$(date +%s)
 elapsed_time=$((end_time - start_time))

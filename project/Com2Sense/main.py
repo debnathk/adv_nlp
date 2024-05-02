@@ -148,8 +148,8 @@ def main():
             model = nn.DataParallel(model, device_ids=device_ids)
             device = torch.device(f'cuda:{model.device_ids[0]}')
 
-        if not text2text:
-            model.to(device)
+        # if not text2text:
+        model.to(device)
 
         model.train()
 
@@ -271,8 +271,8 @@ def main():
                                                    parallel=args.data_parallel)
 
                 log_msg += '\nAfter {} epoch:\n'.format(epoch)
-                log_msg += 'Validation Accuracy: {:.2f} %  || Validation Loss: {:.4f}\n'.format(
-                    val_metrics['accuracy'], val_metrics['loss'])
+                log_msg += 'Validation Accuracy: {:.2f} %  || Validation Loss: {:.4f} || Pairwise Accuracy: {:.2f} %\n'.format(
+                    val_metrics['accuracy'], val_metrics['loss'], val_metrics['pair_acc'])
 
                 # For Multi-Dataset setup:
                 if len(dataset_names) > 1:
@@ -340,16 +340,17 @@ def main():
         is_pairwise = 'com2sense' in dataset_names
 
         # Inference
-        metrics = compute_eval_metrics_test(model, loader, device, data_len, tokenizer, text2text, is_pairwise=is_pairwise, parallel=args.data_parallel)
+        metrics = compute_eval_metrics(model, loader, device, data_len, tokenizer, text2text, is_pairwise=is_pairwise, parallel=args.data_parallel, is_test=True)
 
         df = pd.DataFrame(metrics['meta'])
         df.to_csv(args.pred_file)
 
         print(f'Results for model {args.model}')
         print(f'Results evaluated on file {args.test_file}')
-        # print('Sentence Accuracy: {:.4f}'.format(metrics['accuracy']))
-        # if is_pairwise:
-        #     print('Pairwise Accuracy: {:.4f}'.format(metrics['pair_acc']))
+        print('Sentence Accuracy: {:.4f}'.format(metrics['accuracy']))
+        print('Validation Loss: {:.4f}'.format(metrics['loss']))
+        if is_pairwise:
+            print('Pairwise Accuracy: {:.4f}'.format(metrics['pair_acc']))
 
 
 if __name__ == '__main__':

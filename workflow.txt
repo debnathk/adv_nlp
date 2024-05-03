@@ -1,3 +1,0 @@
-03/20 - Trained the RoBerta-large model on com2sense data
-    - Results are saved in adv_nlp/project/Com2Sense/results_log/com2sense/roberta_large/bs_16
-04/1 - Trained the t5-large model on com2sense data

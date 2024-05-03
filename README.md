@@ -75,16 +75,16 @@ Pair id files are used to get data pair information and could be used to calcula
 1. Clone this repository.
 2. Create a Python 3.11.7 or newer conda environment.
 
-```bash
-conda create -n my_conda_env python=3.11.7
-conda activate my_conda_env
-```
+    ```bash
+    conda create -n my_conda_env python=3.11.7
+    conda activate my_conda_env
+    ```
 
 3. Install the required python modules.
 
-```
-pip install -r requirements.txt
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ---
 
@@ -128,6 +128,13 @@ $ python3 main.py \
 --dataset com2sense \
 --batch_size 32
 ```
+
+---
+
+## References
+
+[COM2SENSE: A Commonsense Reasoning Benchmark with Complementary Sentences](https://aclanthology.org/2021.findings-acl.78) (Singh et al., Findings 2021)
+[Com2Sense](https://github.com/PlusLabNLP/Com2Sense)
 
 ---
 

@@ -19,7 +19,7 @@ module load cuda/12.3  # Change this to the appropriate CUDA version
 # module load anaconda3
 
 # Activate Python environment
-source /lustre/home/pghoshlab/adv_nlp/.venv/bin/activate
+source /lustre/home/pghoshlab/adv_nlp/.venv/bin/activate # replace this line to activate your own virtual/conda environment
 
 # Run Python script
 python3 main_t5.py --mode train \

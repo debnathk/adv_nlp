@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH --job-name=com2sense_ernie
-#SBATCH --output ./slurm_logs/output_train_ernie.log
-#SBATCH --error ./slurm_logs/error_train_ernie.log
+#SBATCH --job-name=com2sense_t5_large
+#SBATCH --output ../slurm_logs/output_train_t5_large.log
+#SBATCH --error ../slurm_logs/error_train_t5_large.log
 #SBATCH --partition gpu
-#SBATCH --mem=16G  
-#SBATCH --gres=gpu:1
+#SBATCH --mem=32G  
+#SBATCH --gres=gpu:2 
 
 echo "Date"
 date
@@ -21,14 +21,15 @@ module load cuda/12.3  # Change this to the appropriate CUDA version
 source activate /lustre/home/pghoshlab/adv_nlp/.venv/bin/python3 # replace this line to activate your own virtual/conda environment
 
 # Run Python script
-python3 main.py --mode train \
+python3 main_new.py --mode train \
 --expt_dir ./results_log/com2sense \
---expt_name ernie \
---model nghuyong/ernie-2.0-base-en \
+--expt_name t5_large \
+--model google-t5/t5-large \
 --dataset com2sense \
---run bs_32 \
---batch_size 32 \
---seq_len 128
+--run bs_16 \
+--batch_size 16 \
+--seq_len 128 \
+--gpu_ids 0
 
 end_time=$(date +%s)
 elapsed_time=$((end_time - start_time))

@@ -1,4 +1,5 @@
 
+
 # Commonsense inference using Large-Language Models
 
 This repo contains the dataset and baseline model weights for
@@ -58,17 +59,20 @@ Pair id files are used to get data pair information and could be used to calcula
 
 ## Models
 
-| Model             | Std / Pair Accuracy | Weights  |
-| ---------         | ------------------- | --------- |
-| UnifiedQA-T5-3B      | 76.21 / 57.54       | [Link](https://drive.google.com/file/d/1uQnxZAkSoDc8JEmESzTl0XVE8kHpm_10/view?usp=sharing)|
-| BERT-base     | 54.35 / 24.81       | ... |
-| RoBERTa-large     | 62.15 / 37.85       | ... |
-| DeBERTa-large     | 68.67 / 28.59       | ... |
-| T5-large     | 61.59 / 36.72       | ... |
-| XLNet-base     | 54.43 / 27.60       | ... |
-| ERNIE-2.0-base     | 55.86 / 30.73       | ... |
+| Model             | Std / Pair Accuracy |
+| ---------         | ------------------- |
+| UnifiedQA-T5-3B      | 76.21 / 57.54       |
+| BERT-base     | 54.35 / 24.81       |
+| RoBERTa-large     | 62.15 / 37.85       |
+| DeBERTa-large     | 68.67 / 28.59       |
+| T5-large     | 61.59 / 36.72       |
+| XLNet-base     | 54.43 / 27.60       |
+| ERNIE-2.0-base     | 55.86 / 30.73       |
 
----
+ 
+
+The models weights for already fine-tuned UnifiedQA-T5-3B can be found  [here](https://drive.google.com/file/d/1uQnxZAkSoDc8JEmESzTl0XVE8kHpm_10/view?usp=sharing)
+For other models, please refer to [Training](#training).
 
 ## Installation
 
